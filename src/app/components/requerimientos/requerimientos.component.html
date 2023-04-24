@@ -36,6 +36,8 @@
         </div>
     </div>
 
+    <div>{{result | json}}</div>
+
     <div class="container">
         <div class="col-lg-6">
             <div class="card">
@@ -43,12 +45,19 @@
                     <h3>Resultado</h3>
                     <table class="table">
                         <tbody>
-                            <!-- <tr *ngFor="let dat of result, let i = index">
-                                <td>{{dat.}}</td>
-                                <td>{{dat.numero}}</td>
-                                <td>{{dat.fechaExpiracion}}</td>
-                                
-                            </tr> -->
+                            <tr *ngFor="let dat of result, let i = index">
+                                <td>{{dat.nombreLoteria}}</td>
+                                <td>{{dat.fecha}}</td>
+                                <td>{{dat.primeraCifra}}</td>
+                                <td>{{dat.segundaCifra}}</td>
+                                <td>{{dat.terceraCifra}}</td>
+                                <td>{{dat.cuartaCifra}}</td>
+                                <td>{{dat.pleno}}</td>
+                                <td>{{dat.ordenado}}</td>
+                                <td>{{dat.dosCifras}}</td>
+                                <td>{{dat.tresCifras}}</td>
+                                <td>{{dat.cuatroCifras}}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

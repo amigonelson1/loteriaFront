@@ -12,7 +12,7 @@ export class RequerimientosComponent {
 
   form!: FormGroup;
   data!: [];
-  result!: [];
+  result: any[] = [];
 
   constructor(private fb: FormBuilder,
     private _loteriaService: LoteriaServices) {
