@@ -24,8 +24,7 @@ export class RequerimientosComponent {
   }
 
   solicitar() {
-    console.log('haz hecho una solicitud', this.form.value)
-    this._loteriaService.getListTarjetas(this.form.value.numeroSorteos, this.form.value.nombreLoteria, this.form.value.fecha).subscribe({
+    this._loteriaService.getListSorteos(this.form.value.numeroSorteos, this.form.value.nombreLoteria, this.form.value.fecha).subscribe({
       next: (data) => { console.log(data); this.result = data },
       error: (e) => console.error(e),
       complete: () => console.info('complete')

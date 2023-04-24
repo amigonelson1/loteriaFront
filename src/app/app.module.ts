@@ -10,11 +10,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 //Modulo para peticiones http;
 import { HttpClientModule } from '@angular/common/http';
+import { ResultadoSorteoSemanalComponent } from './components/resultado-sorteo-semanal/resultado-sorteo-semanal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RequerimientosComponent
+    RequerimientosComponent,
+    ResultadoSorteoSemanalComponent
   ],
   imports: [
     BrowserModule,

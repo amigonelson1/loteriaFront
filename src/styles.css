@@ -17,3 +17,17 @@ h1 {
     text-align: center;
     font-size: 70px;
 }
+
+h2 {
+    color: rgb(173, 14, 179);
+    text-align: center;
+    font-size: 40px;
+}
+
+.centrar {
+    background-color: aqua;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+    margin: 20px auto;
+}

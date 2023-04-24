@@ -1,4 +1,9 @@
-<h1>Lotería</h1>
+<div class="centrar">
+    <h2>Solicitud por cantidad de soteos y unica fecha</h2>
+    <button routerLink="/" class="btn btn-primary">
+        volver
+    </button>
+</div>
 <form [formGroup]="form" (ngSubmit)="solicitar()">
     <div class="container">
         <div class="row justify-content-start">
@@ -9,59 +14,81 @@
                         placeholder="Número de sorteos" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-4">
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupSelect01">Options</label>
                     <select formControlName="nombreLoteria" class="form-select" id="inputGroupSelect01">
                         <option value="Bogotá">Bogotá</option>
-                        <option value="Bogotá">Boyacá</option>
+                        <option value="Boyacá">Boyacá</option>
+                        <option value="Cauca">Cauca</option>
+                        <option value="Cruz Roja">Cruz Roja</option>
                         <option value="Cundinamarca">Cundinamarca</option>
+                        <option value="Huila">Huila</option>
+                        <option value="Manizales">Manizales</option>
+                        <option value="Medellín">Medellín</option>
+                        <option value="Meta">Meta</option>
+                        <option value="Quindio">Quindío</option>
+                        <option value="Risaralda">Risaralda</option>
                         <option value="Santander">Santander</option>
+                        <option value="Tolima">Tolima</option>
                         <option value="Valle">Valle</option>
                     </select>
                 </div>
             </div>
             <div class="col-3">
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">sorteos: </span>
+                    <span class="input-group-text" id="basic-addon1">fecha: </span>
                     <input formControlName="fecha" type="date" class="form-control" aria-label="Username"
                         aria-describedby="basic-addon1">
                 </div>
             </div>
-            <div class="col-3 centrar">
+            <div class="col-2">
                 <button [disabled]="this.form.invalid" type="submit" class="btn btn-info">
                     Generar
                 </button>
             </div>
         </div>
     </div>
+</form>
 
-    <div>{{result | json}}</div>
+<!-- <div>{{result | json}}</div> -->
 
-    <div class="container">
-        <div class="col-lg-6">
-            <div class="card">
-                <div class="card-body">
-                    <h3>Resultado</h3>
-                    <table class="table">
-                        <tbody>
-                            <tr *ngFor="let dat of result, let i = index">
-                                <td>{{dat.nombreLoteria}}</td>
-                                <td>{{dat.fecha}}</td>
-                                <td>{{dat.primeraCifra}}</td>
-                                <td>{{dat.segundaCifra}}</td>
-                                <td>{{dat.terceraCifra}}</td>
-                                <td>{{dat.cuartaCifra}}</td>
-                                <td>{{dat.pleno}}</td>
-                                <td>{{dat.ordenado}}</td>
-                                <td>{{dat.dosCifras}}</td>
-                                <td>{{dat.tresCifras}}</td>
-                                <td>{{dat.cuatroCifras}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+<div class="container" *ngIf="result.length>0">
+    <div>
+        <div class="card">
+            <div class="card-body">
+                <h3>Resultado</h3>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Lotería</th>
+                            <th>Fecha</th>
+                            <th>1a cifra</th>
+                            <th>2a cifra</th>
+                            <th>3a cifra</th>
+                            <th>4a cifra</th>
+                            <th>Pleno</th>
+                            <th>Ordenado</th>
+                            <th>Repite 2 cifras</th>
+                            <th>Repite 3 cifras</th>
+                            <th>Repite 4 cifras</th>
+                        </tr>
+                        <tr *ngFor="let dat of result, let i = index">
+                            <td>{{dat.nombreLoteria}}</td>
+                            <td>{{dat.fecha | date:'shortDate'}}</td>
+                            <td>{{dat.primeraCifra}}</td>
+                            <td>{{dat.segundaCifra}}</td>
+                            <td>{{dat.terceraCifra}}</td>
+                            <td>{{dat.cuartaCifra}}</td>
+                            <td>{{dat.pleno}}</td>
+                            <td>{{dat.ordenado}}</td>
+                            <td>{{dat.dosCifras}}</td>
+                            <td>{{dat.tresCifras}}</td>
+                            <td>{{dat.cuatroCifras}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-</form>
+</div>

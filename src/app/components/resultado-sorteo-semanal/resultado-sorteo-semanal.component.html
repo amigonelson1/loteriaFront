@@ -1,0 +1,29 @@
+<div class="centrar">
+    <h2>Solicitud por rango de fecha</h2>
+    <button routerLink="/" class="btn btn-primary">
+        volver
+    </button>
+</div>
+<form [formGroup]="form" (ngSubmit)="solicitar()">
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-5">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">fecha inicial: </span>
+                    <input type="date" class="form-control" formControlName="fechaInicial">
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">fecha final: </span>
+                    <input type="date" class="form-control" formControlName="fechaFinal">
+                </div>
+            </div>
+            <div class="col-2">
+                <button [disabled]="this.form.invalid" type="submit" class="btn btn-info">
+                    Generar
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
