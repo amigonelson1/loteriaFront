@@ -25,7 +25,7 @@ export class RequerimientosComponent {
 
   solicitar() {
     this._loteriaService.getListSorteos(this.form.value.numeroSorteos, this.form.value.nombreLoteria, this.form.value.fecha).subscribe({
-      next: (data) => { console.log(data); this.result = data },
+      next: (data) => this.result = data,
       error: (e) => console.error(e),
       complete: () => console.info('complete')
     })

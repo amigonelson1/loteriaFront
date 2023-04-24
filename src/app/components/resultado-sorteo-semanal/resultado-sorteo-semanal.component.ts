@@ -27,7 +27,7 @@ export class ResultadoSorteoSemanalComponent {
       return;
     }
     this._loteriaService.getListSemanal(this.form.value.fechaInicial, this.form.value.fechaFinal).subscribe({
-      next: (data) => { console.log(data) },
+      next: (data) => this.result = data,
       error: (e) => console.error(e),
       complete: () => console.info('complete')
     })

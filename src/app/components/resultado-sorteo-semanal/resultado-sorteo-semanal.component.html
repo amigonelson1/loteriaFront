@@ -27,3 +27,54 @@
         </div>
     </div>
 </form>
+<!-- <div>{{result | json}}</div> -->
+
+<div class="container" *ngIf="result.length>0">
+    <div>
+        <div class="card">
+            <div class="card-body">
+                <h3>Resultado</h3>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Semana</th>
+                            <th>Periodo</th>
+                            <th>Bogotá</th>
+                            <th>Boyacá</th>
+                            <th>Cauca</th>
+                            <th>Cruz Roja</th>
+                            <th>Cundinamarca</th>
+                            <th>Huila</th>
+                            <th>Manizales</th>
+                            <th>Medellín</th>
+                            <th>Meta</th>
+                            <th>Quindío</th>
+                            <th>Risaralda</th>
+                            <th>Santander</th>
+                            <th>Tolima</th>
+                            <th>Valle</th>
+                        </tr>
+                        <tr *ngFor="let dat of result, let i = index">
+                            <td>{{dat.semana}}</td>
+                            <td>{{dat.periodo}}</td>
+                            <td>{{dat.bogota.pleno}}</td>
+                            <td>{{dat.boyaca.pleno}}</td>
+                            <td>{{dat.cauca.pleno}}</td>
+                            <td>{{dat.cruzRoja.pleno}}</td>
+                            <td>{{dat.cundinamarca.pleno}}</td>
+                            <td>{{dat.huila.pleno}}</td>
+                            <td>{{dat.manizales.pleno}}</td>
+                            <td>{{dat.medellin.pleno}}</td>
+                            <td>{{dat.meta.pleno}}</td>
+                            <td>{{dat.quindio.pleno}}</td>
+                            <td>{{dat.risaralda.pleno}}</td>
+                            <td>{{dat.santander.pleno}}</td>
+                            <td>{{dat.tolima.pleno}}</td>
+                            <td>{{dat.valle.pleno}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
