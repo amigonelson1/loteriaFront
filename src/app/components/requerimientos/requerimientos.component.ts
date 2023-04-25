@@ -29,7 +29,7 @@ export class RequerimientosComponent {
       error: (e) => console.error(e),
       complete: () => console.info('complete')
     })
-    this.form.reset();
+    //this.form.reset();
   }
 
 

@@ -1,52 +1,64 @@
-<div class="container contenedor" *ngIf="result.length>0">
-    <div>
-        <div class="card">
-            <div class="card-body">
-                <h3>Resultados</h3>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <th>Acciones</th>
-                            <th>Semana</th>
-                            <th>Periodo</th>
-                            <th>Bogotá</th>
-                            <th>Boyacá</th>
-                            <th>Cauca</th>
-                            <th>Cruz Roja</th>
-                            <th>Cundinamarca</th>
-                            <th>Huila</th>
-                            <th>Manizales</th>
-                            <th>Medellín</th>
-                            <th>Meta</th>
-                            <th>Quindío</th>
-                            <th>Risaralda</th>
-                            <th>Santander</th>
-                            <th>Tolima</th>
-                            <th>Valle</th>
-                        </tr>
-                        <tr *ngFor="let dat of result, let i = index">
-                            <td><button (click)="generarMetodoColumna(dat.bogota.pleno, dat)" type="button"
-                                    class="btn btn-primary">Generar</button></td>
-                            <td>{{dat.semana}}</td>
-                            <td>{{dat.periodo}}</td>
-                            <td>{{dat.bogota.pleno}}</td>
-                            <td>{{dat.boyaca.pleno}}</td>
-                            <td>{{dat.cauca.pleno}}</td>
-                            <td>{{dat.cruzRoja.pleno}}</td>
-                            <td>{{dat.cundinamarca.pleno}}</td>
-                            <td>{{dat.huila.pleno}}</td>
-                            <td>{{dat.manizales.pleno}}</td>
-                            <td>{{dat.medellin.pleno}}</td>
-                            <td>{{dat.meta.pleno}}</td>
-                            <td>{{dat.quindio.pleno}}</td>
-                            <td>{{dat.risaralda.pleno}}</td>
-                            <td>{{dat.santander.pleno}}</td>
-                            <td>{{dat.tolima.pleno}}</td>
-                            <td>{{dat.valle.pleno}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+<div class="contenedor" *ngIf="result.length>0">
+
+    <h3>Resultados</h3>
+    <table class="table">
+        <tbody>
+            <tr>
+                <!-- <th>Acciones</th> -->
+                <th>Semana</th>
+                <th>Periodo</th>
+                <th>Bogotá</th>
+                <th>Boyacá</th>
+                <th>Cauca</th>
+                <th>Cruz Roja</th>
+                <th>Cundinamarca</th>
+                <th>Huila</th>
+                <th>Manizales</th>
+                <th>Medellín</th>
+                <th>Meta</th>
+                <th>Quindío</th>
+                <th>Risaralda</th>
+                <th>Santander</th>
+                <th>Tolima</th>
+                <th>Valle</th>
+            </tr>
+            <tr *ngFor="let dat of result, let i = index">
+                <!-- <td><button type="button" class="btn btn-primary">Generar</button></td> -->
+                <td>{{dat.semana}}</td>
+                <td>{{dat.periodo}}</td>
+                <td (click)="generarMetodoColumna(dat.bogota.pleno, dat.bogota.nombreLoteria, dat)" class="puntero">
+                    {{dat.bogota.pleno}}</td>
+                <td (click)="generarMetodoColumna(dat.boyaca.pleno, dat.boyaca.nombreLoteria, dat)" class="puntero">
+                    {{dat.boyaca.pleno}}</td>
+                <td (click)="generarMetodoColumna(dat.cauca.pleno, dat.cauca.nombreLoteria, dat)" class="puntero">
+                    {{dat.cauca.pleno}}</td>
+                <td (click)="generarMetodoColumna(dat.cruzRoja.pleno, dat.cruzRoja.nombreLoteria, dat)" class="puntero">
+                    {{dat.cruzRoja.pleno}}</td>
+                <td (click)="generarMetodoColumna(dat.cundinamarca.pleno, dat.cundinamarca.nombreLoteria, dat)"
+                    class="puntero">
+                    {{dat.cundinamarca.pleno}}</td>
+                <td (click)="generarMetodoColumna(dat.huila.pleno, dat.huila.nombreLoteria, dat)" class="puntero">
+                    {{dat.huila.pleno}}</td>
+                <td (click)="generarMetodoColumna(dat.manizales.pleno, dat.manizales.nombreLoteria, dat)"
+                    class="puntero">{{dat.manizales.pleno}}
+                </td>
+                <td (click)="generarMetodoColumna(dat.medellin.pleno, dat.medellin.nombreLoteria, dat)" class="puntero">
+                    {{dat.medellin.pleno}}</td>
+                <td (click)="generarMetodoColumna(dat.meta.pleno, dat.meta.nombreLoteria, dat)" class="puntero">
+                    {{dat.meta.pleno}}</td>
+                <td (click)="generarMetodoColumna(dat.quindio.pleno, dat.quindio.nombreLoteria, dat)" class="puntero">
+                    {{dat.quindio.pleno}}</td>
+                <td (click)="generarMetodoColumna(dat.risaralda.pleno, dat.risaralda.nombreLoteria, dat)"
+                    class="puntero">{{dat.risaralda.pleno}}
+                </td>
+                <td (click)="generarMetodoColumna(dat.santander.pleno, dat.santander.nombreLoteria, dat)"
+                    class="puntero">{{dat.santander.pleno}}
+                </td>
+                <td (click)="generarMetodoColumna(dat.tolima.pleno, dat.tolima.nombreLoteria, dat)" class="puntero">
+                    {{dat.tolima.pleno}}</td>
+                <td (click)="generarMetodoColumna(dat.valle.pleno, dat.valle.nombreLoteria, dat)" class="puntero">
+                    {{dat.valle.pleno}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

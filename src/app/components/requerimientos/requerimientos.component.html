@@ -1,5 +1,5 @@
 <div class="centrar">
-    <h2>Solicitud por cantidad de soteos y unica fecha</h2>
+    <h2>Solicitud por cantidad de soteos y única fecha</h2>
     <button routerLink="/" class="btn btn-primary">
         volver
     </button>
@@ -53,42 +53,40 @@
 
 <!-- <div>{{result | json}}</div> -->
 
-<div class="container contenedor" *ngIf="result.length>0">
-    <div>
-        <div class="card">
-            <div class="card-body">
-                <h3>Resultado</h3>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <th>Lotería</th>
-                            <th>Fecha</th>
-                            <th>1a cifra</th>
-                            <th>2a cifra</th>
-                            <th>3a cifra</th>
-                            <th>4a cifra</th>
-                            <th>Pleno</th>
-                            <th>Ordenado</th>
-                            <th>Repite 2 cifras</th>
-                            <th>Repite 3 cifras</th>
-                            <th>Repite 4 cifras</th>
-                        </tr>
-                        <tr *ngFor="let dat of result, let i = index">
-                            <td>{{dat.nombreLoteria}}</td>
-                            <td>{{dat.fecha | date:'shortDate'}}</td>
-                            <td>{{dat.primeraCifra}}</td>
-                            <td>{{dat.segundaCifra}}</td>
-                            <td>{{dat.terceraCifra}}</td>
-                            <td>{{dat.cuartaCifra}}</td>
-                            <td>{{dat.pleno}}</td>
-                            <td>{{dat.ordenado}}</td>
-                            <td>{{dat.dosCifras}}</td>
-                            <td>{{dat.tresCifras}}</td>
-                            <td>{{dat.cuatroCifras}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+<div class="contenedor" *ngIf="result.length>0">
+    <h3>Resultado</h3>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Lotería</th>
+                <th>Fecha</th>
+                <th>1a cifra</th>
+                <th>2a cifra</th>
+                <th>3a cifra</th>
+                <th>4a cifra</th>
+                <th>Pleno</th>
+                <th>Ordenado</th>
+                <th>Pleno 3 cifras</th>
+                <th>Ordenado 3 cifras</th>
+                <th>Repite 2 cifras</th>
+                <th>Repite 3 cifras</th>
+                <th>Repite 4 cifras</th>
+            </tr>
+            <tr *ngFor="let dat of result, let i = index">
+                <td>{{dat.nombreLoteria}}</td>
+                <td>{{dat.fecha | date:'shortDate'}}</td>
+                <td>{{dat.primeraCifra}}</td>
+                <td>{{dat.segundaCifra}}</td>
+                <td>{{dat.terceraCifra}}</td>
+                <td>{{dat.cuartaCifra}}</td>
+                <td>{{dat.pleno}}</td>
+                <td>{{dat.ordenado}}</td>
+                <td>{{dat.pleno3Cifras}}</td>
+                <td>{{dat.ordenado3Cifras}}</td>
+                <td>{{dat.dosCifras}}</td>
+                <td>{{dat.tresCifras}}</td>
+                <td>{{dat.cuatroCifras}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

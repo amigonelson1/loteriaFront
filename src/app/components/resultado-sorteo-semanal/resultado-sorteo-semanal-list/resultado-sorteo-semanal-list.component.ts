@@ -6,13 +6,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./resultado-sorteo-semanal-list.component.css']
 })
 export class ResultadoSorteoSemanalListComponent {
-@Input() result: any[]=[];
-@Output() metodoColumna: EventEmitter<any>=new EventEmitter<any>();
+  @Input() result: any[] = [];
+  @Output() metodoColumna: EventEmitter<any> = new EventEmitter<any>();
 
 
-generarMetodoColumna(pleno:string,resultadoSemana:any){
-  let variable= {pleno,resultadoSemana};
-  this.metodoColumna.emit(variable);
-}
+  generarMetodoColumna(pleno: string, loteria: string, resultadoSemana: any) {
+    let variable = { pleno, loteria, resultadoSemana };
+    this.metodoColumna.emit(variable);
+  }
 
 }
