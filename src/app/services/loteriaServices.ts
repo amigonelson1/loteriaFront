@@ -12,14 +12,12 @@ export class LoteriaServices {
   private myAppUrl = 'https://localhost:7135/';
   private myApiUrlSorteos = 'api/Loteria/GetSorteos/';
   private myApiUrlSemanal = 'api/Loteria/GetSemanal/';
+  private myApiUrlColumna = 'api/Loteria/GetMetodoColumna/';
 
   constructor(private http: HttpClient) { }
 
-  getListSorteos(sorteo: number, nombre: string, fech: string): Observable<any> {
-    const numeroSorteos = sorteo;
-    const nombreLoteria = nombre;
-    const fecha = fech;
-    return this.http.get(this.myAppUrl + this.myApiUrlSorteos + `${numeroSorteos}/${nombreLoteria}/${fecha}`,);
+  getListSorteos(sorteo: number, nombre: string, fecha: string): Observable<any> {
+    return this.http.get(this.myAppUrl + this.myApiUrlSorteos + `${sorteo}/${nombre}/${fecha}`,);
   }
 
   validationsDate(initial: Date, endend: Date): boolean {
@@ -28,9 +26,11 @@ export class LoteriaServices {
   }
 
   getListSemanal(inicial: string, final: string): Observable<any> {
-    const fechaInicial = inicial;
-    const fechaFinal = final;
-    return this.http.get(this.myAppUrl + this.myApiUrlSemanal + `${fechaInicial}/${fechaFinal}`,);
+    return this.http.get(this.myAppUrl + this.myApiUrlSemanal + `${inicial}/${final}`,);
+  }
+
+  getMetodoColumna(pleno: string): Observable<any> {
+    return this.http.get(this.myAppUrl + this.myApiUrlColumna + `${pleno}`,);
   }
 
 }

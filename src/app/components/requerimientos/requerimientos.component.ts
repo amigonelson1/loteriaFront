@@ -17,9 +17,9 @@ export class RequerimientosComponent {
   constructor(private fb: FormBuilder,
     private _loteriaService: LoteriaServices) {
     this.form = this.fb.group({
-      numeroSorteos: ['', Validators.required],
+      numeroSorteos: ['5', Validators.required],
       nombreLoteria: ['', Validators.required],
-      fecha: ['', Validators.required]
+      fecha: ['2023-10-01', Validators.required]
     })
   }
 

@@ -24,6 +24,12 @@ h2 {
     font-size: 40px;
 }
 
+h3 {
+    color: rgb(173, 14, 179);
+    text-align: center;
+    font-size: 30px;
+}
+
 .centrar {
     background-color: aqua;
     align-items: center;
@@ -37,3 +43,12 @@ h2 {
     overflow: auto; /* Scroll interno */
     margin-bottom: 100px;
   }
+
+  .centrarCard {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    max-width: 400px;
+    margin: 20px auto;
+}

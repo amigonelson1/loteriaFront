@@ -11,12 +11,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 //Modulo para peticiones http;
 import { HttpClientModule } from '@angular/common/http';
 import { ResultadoSorteoSemanalComponent } from './components/resultado-sorteo-semanal/resultado-sorteo-semanal.component';
+import { ResultadoSorteoSemanalListComponent } from './components/resultado-sorteo-semanal/resultado-sorteo-semanal-list/resultado-sorteo-semanal-list.component';
+import { ResultadoSorteoSemanalInputFieldsComponent } from './components/resultado-sorteo-semanal/resultado-sorteo-semanal-input-fields/resultado-sorteo-semanal-input-fields.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RequerimientosComponent,
-    ResultadoSorteoSemanalComponent
+    ResultadoSorteoSemanalComponent,
+    ResultadoSorteoSemanalListComponent,
+    ResultadoSorteoSemanalInputFieldsComponent
   ],
   imports: [
     BrowserModule,
