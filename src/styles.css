@@ -31,3 +31,9 @@ h2 {
     max-width: 600px;
     margin: 20px auto;
 }
+
+.contenedor {
+    height: 400px; /* Altura del div */
+    overflow: auto; /* Scroll interno */
+    margin-bottom: 100px;
+  }
