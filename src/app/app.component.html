@@ -1,20 +1,24 @@
-<h1>Lotería</h1>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/porloteria"><b>Por única lotería</b></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/porfecha"><b>Por rango de fecha</b></a>
-                </li>
-            </ul>
+<div class="titulo">
+    <h1>LOTERÍA</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/porloteria"><b>Por única lotería</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/porfecha"><b>Por rango de fecha</b></a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-<router-outlet></router-outlet>
+    </nav>
+</div>
+<div style="margin-top: 220px;">
+    <router-outlet></router-outlet>
+</div>

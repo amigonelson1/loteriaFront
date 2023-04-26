@@ -10,7 +10,7 @@
             <div class="col-3">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">sorteos: </span>
-                    <input formControlName="numeroSorteos" type="number" max="99" min="1" class="form-control"
+                    <input formControlName="numeroSorteos" type="number" max="999" min="1" class="form-control"
                         placeholder="Número de sorteos" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
             </div>
@@ -54,10 +54,11 @@
 <!-- <div>{{result | json}}</div> -->
 
 <div class="contenedor" *ngIf="result.length>0">
-    <h3>Resultado</h3>
-    <table class="table">
-        <tbody>
+    <h3>Resultado de los {{result.length}} sorteos</h3>
+    <table class="table table-hover">
+        <thead class="table-dark sticky-header">
             <tr>
+                <th></th>
                 <th>Lotería</th>
                 <th>Fecha</th>
                 <th>1a cifra</th>
@@ -68,11 +69,16 @@
                 <th>Ordenado</th>
                 <th>Pleno 3 cifras</th>
                 <th>Ordenado 3 cifras</th>
-                <th>Repite 2 cifras</th>
-                <th>Repite 3 cifras</th>
-                <th>Repite 4 cifras</th>
+                <th>En 4 cifras repite 2 cifras</th>
+                <th>En 4 cifras repite 3 cifras</th>
+                <th>En 4 cifras repite 4 cifras</th>
+                <th>En 3 cifras repite 2 cifras</th>
+                <th>En 3 cifras repite 3 cifras</th>
             </tr>
+        </thead>
+        <tbody>
             <tr *ngFor="let dat of result, let i = index">
+                <td>{{i+1}}</td>
                 <td>{{dat.nombreLoteria}}</td>
                 <td>{{dat.fecha | date:'shortDate'}}</td>
                 <td>{{dat.primeraCifra}}</td>
@@ -86,6 +92,8 @@
                 <td>{{dat.dosCifras}}</td>
                 <td>{{dat.tresCifras}}</td>
                 <td>{{dat.cuatroCifras}}</td>
+                <td>{{dat.dosCifras3}}</td>
+                <td>{{dat.tresCifras3}}</td>
             </tr>
         </tbody>
     </table>

@@ -8,14 +8,31 @@ body {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+@keyframes slidein {
+    from {
+        margin-left: 70%;
+        width: 100%
+    }
+
+    to {
+        margin-left: 10%;
+        width: 100%;
+    }
+}
+
+.titulo {
+    width: 100%;
+    background-color: white;
+    margin-bottom: -10px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
 h1 {
-    max-width: 600px;
-    margin: 50px auto;
-    background-color: aqua;
     color: rgb(173, 14, 179);
-    align-items: center;
-    text-align: center;
-    font-size: 70px;
+    font-size: 110px;
+    animation: 20s infinite alternate slidein;
 }
 
 h2 {
@@ -72,3 +89,9 @@ h3 {
     align-items: end;
     margin-bottom: 10px;
 }
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+  }

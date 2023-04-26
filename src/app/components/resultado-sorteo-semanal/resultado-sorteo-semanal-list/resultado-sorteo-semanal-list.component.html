@@ -1,10 +1,10 @@
 <div class="contenedor" *ngIf="result.length>0">
 
-    <h3>Resultados</h3>
-    <table class="table">
-        <tbody>
+    <h3>Por las fechas seleccionadas se generaron {{result.length}} sorteos</h3>
+    <table class="table table-hover">
+        <thead class="table-dark sticky-header">
             <tr>
-                <!-- <th>Acciones</th> -->
+                <th></th>
                 <th>Semana</th>
                 <th>Periodo</th>
                 <th>Bogotá</th>
@@ -22,8 +22,10 @@
                 <th>Tolima</th>
                 <th>Valle</th>
             </tr>
+        </thead>
+        <tbody>
             <tr *ngFor="let dat of result, let i = index">
-                <!-- <td><button type="button" class="btn btn-primary">Generar</button></td> -->
+                <td>{{i+1}}</td>
                 <td>{{dat.semana}}</td>
                 <td>{{dat.periodo}}</td>
                 <td (click)="generarMetodoColumna(dat.bogota.pleno, dat.bogota.nombreLoteria, dat)" class="puntero">

@@ -3,14 +3,16 @@
         <div class="card-body">
             <h3>Pleno: {{resultadoSemana.pleno}}<br> de la lotería {{resultadoSemana.loteria}}</h3>
             resultados según método de la columna del pleno seleccionado:
-            <table class="table">
-                <tbody>
+            <table class="table table-hover">
+                <thead class="table-dark">
                     <tr>
                         <th>Pleno</th>
                         <th>Pleno 0rdenado</th>
                         <th>Pleno 3 cifras</th>
                         <th>Pleno 3 cifras ordenado</th>
                     </tr>
+                </thead>
+                <tbody>
                     <tr *ngFor="let date of result, let i = index">
                         <td>{{date.generado4Cifras}}</td>
                         <td>{{date.ordenadoGenerado4Cifras}}</td>
@@ -26,10 +28,11 @@
     <div class="card" style="width: 100%;">
         <div class="card-body">
             <h3>Resultados generales</h3>
-            Todos los demás resultados de las loterías de la semana <b>{{resultadoSemana.resultadoSemana.semana}}</b>
-            <table class="table">
-                <tbody>
+            Todos los demás resultados de las loterías de la semana: <b>{{resultadoSemana.resultadoSemana.semana}}</b>
+            <table class="table table-hover">
+                <thead class="table-dark">
                     <tr>
+                        <th>Resultados</th>
                         <th *ngIf="dia!=4">{{resultadoSemana.resultadoSemana.bogota.nombreLoteria}}</th>
                         <th *ngIf="dia!=6">{{resultadoSemana.resultadoSemana.boyaca.nombreLoteria}}</th>
                         <th *ngIf="dia!=6">{{resultadoSemana.resultadoSemana.cauca.nombreLoteria}}</th>
@@ -44,8 +47,15 @@
                         <th *ngIf="dia!=5">{{resultadoSemana.resultadoSemana.santander.nombreLoteria}}</th>
                         <th *ngIf="dia!=1">{{resultadoSemana.resultadoSemana.tolima.nombreLoteria}}</th>
                         <th *ngIf="dia!=3">{{resultadoSemana.resultadoSemana.valle.nombreLoteria}}</th>
+                        <th>2 cifras repetidas</th>
+                        <th>3 cifras repetidas</th>
+                        <th>4 cifras repetidas</th>
+                        <th>Aciertos</th>
                     </tr>
+                </thead>
+                <tbody>
                     <tr>
+                        <td><b>Pleno 4 cifras</b></td>
                         <td *ngIf="dia!=4">{{resultadoSemana.resultadoSemana.bogota.pleno}}</td>
                         <td *ngIf="dia!=6">{{resultadoSemana.resultadoSemana.boyaca.pleno}}</td>
                         <td *ngIf="dia!=6">{{resultadoSemana.resultadoSemana.cauca.pleno}}</td>
@@ -60,8 +70,31 @@
                         <td *ngIf="dia!=5">{{resultadoSemana.resultadoSemana.santander.pleno}}</td>
                         <td *ngIf="dia!=1">{{resultadoSemana.resultadoSemana.tolima.pleno}}</td>
                         <td *ngIf="dia!=3">{{resultadoSemana.resultadoSemana.valle.pleno}}</td>
+
                     </tr>
                     <tr>
+                        <td><b>Ordenado 4 cifras</b></td>
+                        <td *ngIf="dia!=4">{{resultadoSemana.resultadoSemana.bogota.ordenado}}</td>
+                        <td *ngIf="dia!=6">{{resultadoSemana.resultadoSemana.boyaca.ordenado}}</td>
+                        <td *ngIf="dia!=6">{{resultadoSemana.resultadoSemana.cauca.ordenado}}</td>
+                        <td *ngIf="dia!=2">{{resultadoSemana.resultadoSemana.cruzRoja.ordenado}}</td>
+                        <td *ngIf="dia!=1">{{resultadoSemana.resultadoSemana.cundinamarca.ordenado}}</td>
+                        <td *ngIf="dia!=2">{{resultadoSemana.resultadoSemana.huila.ordenado}}</td>
+                        <td *ngIf="dia!=3">{{resultadoSemana.resultadoSemana.manizales.ordenado}}</td>
+                        <td *ngIf="dia!=5">{{resultadoSemana.resultadoSemana.medellin.ordenado}}</td>
+                        <td *ngIf="dia!=3">{{resultadoSemana.resultadoSemana.meta.ordenado}}</td>
+                        <td *ngIf="dia!=4">{{resultadoSemana.resultadoSemana.quindio.ordenado}}</td>
+                        <td *ngIf="dia!=5">{{resultadoSemana.resultadoSemana.risaralda.ordenado}}</td>
+                        <td *ngIf="dia!=5">{{resultadoSemana.resultadoSemana.santander.ordenado}}</td>
+                        <td *ngIf="dia!=1">{{resultadoSemana.resultadoSemana.tolima.ordenado}}</td>
+                        <td *ngIf="dia!=3">{{resultadoSemana.resultadoSemana.valle.ordenado}}</td>
+                        <td>{{contador2cifras4}}</td>
+                        <td>{{contador3cifras4}}</td>
+                        <td>{{contador4cifras4}}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><b>Pleno 3 cifras</b></td>
                         <td *ngIf="dia!=4">{{resultadoSemana.resultadoSemana.bogota.pleno3Cifras}}</td>
                         <td *ngIf="dia!=6">{{resultadoSemana.resultadoSemana.boyaca.pleno3Cifras}}</td>
                         <td *ngIf="dia!=6">{{resultadoSemana.resultadoSemana.cauca.pleno3Cifras}}</td>
@@ -77,11 +110,32 @@
                         <td *ngIf="dia!=1">{{resultadoSemana.resultadoSemana.tolima.pleno3Cifras}}</td>
                         <td *ngIf="dia!=3">{{resultadoSemana.resultadoSemana.valle.pleno3Cifras}}</td>
                     </tr>
+                    <tr>
+                        <td><b>Ordenado 3 cifras</b></td>
+                        <td *ngIf="dia!=4">{{resultadoSemana.resultadoSemana.bogota.ordenado3Cifras}}</td>
+                        <td *ngIf="dia!=6">{{resultadoSemana.resultadoSemana.boyaca.ordenado3Cifras}}</td>
+                        <td *ngIf="dia!=6">{{resultadoSemana.resultadoSemana.cauca.ordenado3Cifras}}</td>
+                        <td *ngIf="dia!=2">{{resultadoSemana.resultadoSemana.cruzRoja.ordenado3Cifras}}</td>
+                        <td *ngIf="dia!=1">{{resultadoSemana.resultadoSemana.cundinamarca.ordenado3Cifras}}</td>
+                        <td *ngIf="dia!=2">{{resultadoSemana.resultadoSemana.huila.ordenado3Cifras}}</td>
+                        <td *ngIf="dia!=3">{{resultadoSemana.resultadoSemana.manizales.ordenado3Cifras}}</td>
+                        <td *ngIf="dia!=5">{{resultadoSemana.resultadoSemana.medellin.ordenado3Cifras}}</td>
+                        <td *ngIf="dia!=3">{{resultadoSemana.resultadoSemana.meta.ordenado3Cifras}}</td>
+                        <td *ngIf="dia!=4">{{resultadoSemana.resultadoSemana.quindio.ordenado3Cifras}}</td>
+                        <td *ngIf="dia!=5">{{resultadoSemana.resultadoSemana.risaralda.ordenado3Cifras}}</td>
+                        <td *ngIf="dia!=5">{{resultadoSemana.resultadoSemana.santander.ordenado3Cifras}}</td>
+                        <td *ngIf="dia!=1">{{resultadoSemana.resultadoSemana.tolima.ordenado3Cifras}}</td>
+                        <td *ngIf="dia!=3">{{resultadoSemana.resultadoSemana.valle.ordenado3Cifras}}</td>
+                        <td>{{contador2cifras3}}</td>
+                        <td>{{contador3cifras3}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table>
-            <button (click)="volverAListaCompleta()">
+            <!-- <button (click)="volverAListaCompleta()">
                 volver
-            </button>
+            </button> -->
         </div>
     </div>
 </div>
