@@ -21,7 +21,9 @@ export class ResultadoSorteoSemanalInputFieldsComponent {
   listaPlenos3: string[] = [];
   listaOrdenados3: string[] = [];
   aciertos3: number = 0;
+  aciertosO3: number = 0;
   aciertos4: number = 0;
+  aciertosO4: number = 0;
 
   constructor(private _loteriaService: LoteriaServices) { }
 
@@ -44,15 +46,13 @@ export class ResultadoSorteoSemanalInputFieldsComponent {
     if (this.resultadoSemana.loteria === 'Boyacá' || this.resultadoSemana.loteria === 'Cauca') { this.dia = 6 }
     this.solicitarValoresMetodoColumna();
     this.contadorDeRepetidos();
-    this.aciertos();
   }
 
   solicitarValoresMetodoColumna() {
     this._loteriaService.getMetodoColumna(this.resultadoSemana.pleno).subscribe({
       next: (data) => {
         this.result = data
-        //this.aciertos3=data.generado4Cifras,
-        //this.aciertos4=data.ordenadoGenerado4Cifras,
+        this.aciertos(data);
       },
       error: (e) => console.error(e),
       complete: () => console.info('complete')
@@ -82,7 +82,6 @@ export class ResultadoSorteoSemanalInputFieldsComponent {
       // contador para 3 cifras resptidas de plenos de 3 cifras
       if (this.resultadoSemana.resultadoSemana.cundinamarca.tresCifras3) this.contador3cifras3++;
       if (this.resultadoSemana.resultadoSemana.tolima.tresCifras3) this.contador3cifras3++;
-      console.log(this.resultadoSemana.resultadoSemana.cundinamarca.pleno3Cifras);
       //agregamos los resultados de 3 y 4 cifras en plenos y ordenados para comparar con los resultados del metodo de la columna
       this.listaPlenos3.push(this.resultadoSemana.resultadoSemana.cundinamarca.pleno3Cifras);
       this.listaOrdenados3.push(this.resultadoSemana.resultadoSemana.cundinamarca.ordenado3Cifras);
@@ -214,9 +213,52 @@ export class ResultadoSorteoSemanalInputFieldsComponent {
   }
 
   //funcion para cuantificar cuantos exitos de acierto se tuvieron
-  aciertos() {
-    console.log(this.listaPlenos3, this.listaOrdenados3, this.listaPlenos4, this.listaOrdenados4)
-    console.log(this.result[0])
+  aciertos(data: any[]) {
+    //console.log(this.listaPlenos3, this.listaOrdenados3, this.listaPlenos4, this.listaOrdenados4)
+
+    for (let item of data) {
+      var indices = [];
+      var idx = this.listaPlenos3.indexOf(item.generado3Cifras);
+      while (idx != -1) {
+        indices.push(idx);
+        idx = this.listaPlenos3.indexOf(item.generado3Cifras, idx + 1);
+      }
+      this.aciertos3 = indices.length;
+    }
+
+    for (let item of data) {
+      console.log(this.listaOrdenados3[0], item.ordenadoGenerado3Cifras)
+      var indices = [];
+      var idx = this.listaOrdenados3.indexOf(item.ordenadoGenerado3Cifras);
+      while (idx != -1) {
+        indices.push(idx);
+        idx = this.listaOrdenados3.indexOf(item.ordenadoGenerado3Cifras, idx + 1);
+      }
+      console.log(indices)
+      this.aciertosO3 = indices.length;
+    }
+
+    for (let item of data) {
+      var indices = [];
+      var idx = this.listaPlenos4.indexOf(item.generado4Cifras);
+      while (idx != -1) {
+        indices.push(idx);
+        idx = this.listaPlenos4.indexOf(item.generado4Cifras, idx + 1);
+      }
+      this.aciertos4 = indices.length;
+    }
+
+    for (let item of data) {
+      console.log();
+      var indices = [];
+      var idx = this.listaOrdenados4.indexOf(item.ordenadoGenerado4Cifras);
+      while (idx != -1) {
+        indices.push(idx);
+        idx = this.listaOrdenados4.indexOf(item.ordenadoGenerado4Cifras, idx + 1);
+      }
+      this.aciertosO4 = indices.length;
+    }
+
   }
 
 }
