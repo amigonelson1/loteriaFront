@@ -45,5 +45,8 @@ export class ResultadoSorteoSemanalComponent {
     this.verListaResultado=true;
 
   }
+  volverPrincipal(){
+    this.verListaResultado=true;
+  }
 
 }

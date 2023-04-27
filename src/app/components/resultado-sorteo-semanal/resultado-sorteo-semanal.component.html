@@ -28,5 +28,5 @@
     </div>
 </form>
 <app-resultado-sorteo-semanal-list *ngIf="verListaResultado" [result]="resultPadre" (metodoColumna)="getMetodoColumna($event)"></app-resultado-sorteo-semanal-list>
-<app-resultado-sorteo-semanal-input-fields *ngIf="!verListaResultado" [resultadoSemana]="resultadoSemana" ></app-resultado-sorteo-semanal-input-fields>
+<app-resultado-sorteo-semanal-input-fields *ngIf="!verListaResultado" [resultadoSemana]="resultadoSemana" (volverPrincipal)="volverPrincipal()"></app-resultado-sorteo-semanal-input-fields>
 <!-- <div>{{result | json}}</div> -->
